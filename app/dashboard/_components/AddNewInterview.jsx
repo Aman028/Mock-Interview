@@ -47,7 +47,7 @@ function AddNewInterview() {
       jobExperience +
       ", Depends on job position,job description & years of experience give us" +
       process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +
-      "interview question along with Answer IN JSON format. give naswer and question in field of JSON";
+      "interview question along with Answer IN JSON format. Give naswer and question in field of JSON. There sholuld not be non-whitespace charcter in answer";
     const result = await chatSession.sendMessage(InputPrompt);
     const mockjsonresp = result.response
       .text()
@@ -84,12 +84,12 @@ function AddNewInterview() {
   };
 
   return (
-    <div>
+    <div className="ml-5">
       <div
         className="p-10 border rounded-lg bg-secondary hover:scale-105 hover:shaow-md cursor-pointer transition-all"
         onClick={() => setOpenDialog(true)}
       >
-        <h2 className=" text-lg text-center">+ Add New</h2>
+        <h2 className=" text-lg text-center mr-10">+ Add New</h2>
       </div>
       <Dialog open={openDialog}>
         <DialogContent className="max-w-2xl">
